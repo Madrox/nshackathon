@@ -8,8 +8,6 @@
 
 #import "API.h"
 
-static API *shared = NULL;
-
 @implementation API
 
 @synthesize guid;
@@ -18,15 +16,12 @@ static API *shared = NULL;
 
 + (API *)sharedAPI
 {
-    @synchronized([API class])
-    {
-        if ( !shared || shared == NULL )
-        {
-            shared = [[API alloc] init];
-        }
-        
-        return shared;
-    }
+    static API *sharedAPI = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedAPI = [[self alloc] init];
+    });
+    return sharedAPI;
 }
 
 - (NSString *)identify:(NSString *)username andLatitude:(float)lat andLongitude:(float)lon andPicURL:(NSString *)pic {
@@ -36,7 +31,7 @@ static API *shared = NULL;
     self.stats = @{
                    @"shares_near_me": @[]
                    };
-    
+    NSLog(@"Share GUID: %@",self.guid);
     return self.guid;
 }
 
