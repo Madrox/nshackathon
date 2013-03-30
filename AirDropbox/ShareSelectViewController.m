@@ -25,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Select Items to Share", @"Select Items to Share");
+        self.title = NSLocalizedString(@"Select An Item to Share", @"Select An Item to Share");
     }
     return self;
 }

@@ -75,7 +75,7 @@
     API* api = [API sharedAPI];
     
     NSString* name = [[UIDevice currentDevice] name];
-    name = [name stringByReplacingOccurrencesOfString:@" " withString:@""];
+//    name = [name stringByReplacingOccurrencesOfString:@" " withString:@""];
     [api identify:name andLatitude:latitude andLongitude:longitude andPicURL:nil];
     [api refresh];
     [locationManager stopUpdatingLocation];
