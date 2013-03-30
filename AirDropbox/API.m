@@ -25,6 +25,13 @@
 }
 
 - (NSString *)identify:(NSString *)username andLatitude:(float)lat andLongitude:(float)lon andPicURL:(NSString *)pic {
+    username = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                 NULL,
+                                                                                 (CFStringRef)username,
+                                                                                 NULL,
+                                                                                 (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                 kCFStringEncodingUTF8 ));
+    
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/identify?lat=%f&lon=%f&username=%@&image=%@",lat,lon,username,pic]];
     self.guid = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     
@@ -55,6 +62,14 @@
 
 - (NSURLConnection *)share:(NSString *)name toLink:(NSString *)dropbox_link {
     NSString *url = [NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@/share?name=%@&link=%@",self.guid,name,dropbox_link];
+    
+    name = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                     NULL,
+                                                                                     (CFStringRef)name,
+                                                                                     NULL,
+                                                                                     (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                     kCFStringEncodingUTF8 ));
+
     
     NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     
