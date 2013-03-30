@@ -12,6 +12,8 @@
 #import "API.h"
 #import <DropboxSDK/DropboxSDK.h>
 
+#import "SVProgressHUD.h"
+
 @interface ShareSelectViewController () {
     NSMutableArray *_objects;
 }
@@ -95,10 +97,12 @@ loadMetadataFailedWithError:(NSError *)error {
     //sanitize the path string (remove the initial "/")
     path = [path stringByReplacingOccurrencesOfString:@"/" withString:@""];
     [apiWrapper share:path toLink:link];
+    
+    [SVProgressHUD showSuccessWithStatus:@"Successful share!"];
 }
 - (void)restClient:(DBRestClient*)restClient loadSharableLinkFailedWithError:(NSError*)error;
 {
-    NSLog(@"Error loading shareable link: %@", error);
+    [SVProgressHUD showErrorWithStatus:@"Error sharing file"];
 }
 
 
@@ -140,7 +144,6 @@ loadMetadataFailedWithError:(NSError *)error {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-
 
     DBMetadata *cellMetadata = _objects[indexPath.row];
     cell.textLabel.text =  cellMetadata.filename;
@@ -196,7 +199,7 @@ loadMetadataFailedWithError:(NSError *)error {
     DBMetadata *fileMetadata = _objects[indexPath.row];
     [restClient loadSharableLinkForFile:fileMetadata.path];
     
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
 //    self.detailViewController.detailItem = object;
 //    [self.navigationController pushViewController:self.detailViewController animated:YES];

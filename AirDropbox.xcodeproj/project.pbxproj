@@ -28,6 +28,7 @@
 		D32D6A2417076EF600B3F27A /* ShareSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2017076EF600B3F27A /* ShareSelectViewController.xib */; };
 		D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2117076EF600B3F27A /* DetailViewController.xib */; };
 		D32D6A2F1707885500B3F27A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A2E1707885500B3F27A /* SVProgressHUD.m */; };
+		D32D6A31170789CD00B3F27A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A30170789CD00B3F27A /* SVProgressHUD.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		D32D6A2117076EF600B3F27A /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		D32D6A2D1707885500B3F27A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		D32D6A2E1707885500B3F27A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		D32D6A30170789CD00B3F27A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		D32D6A2C1707885500B3F27A /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
+				D32D6A30170789CD00B3F27A /* SVProgressHUD.bundle */,
 				D32D6A2D1707885500B3F27A /* SVProgressHUD.h */,
 				D32D6A2E1707885500B3F27A /* SVProgressHUD.m */,
 			);
@@ -215,6 +218,7 @@
 				D32D6A2417076EF600B3F27A /* ShareSelectViewController.xib in Resources */,
 				D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */,
 				8381956017077B0700785C36 /* SharesViewController.xib in Resources */,
+				D32D6A31170789CD00B3F27A /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
