@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8381955F17077B0700785C36 /* SharesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381955D17077B0700785C36 /* SharesViewController.m */; };
+		8381956017077B0700785C36 /* SharesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8381955E17077B0700785C36 /* SharesViewController.xib */; };
 		D32D69B31707668200B3F27A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69B21707668200B3F27A /* UIKit.framework */; };
 		D32D69B51707668200B3F27A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69B41707668200B3F27A /* Foundation.framework */; };
 		D32D69B71707668200B3F27A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69B61707668200B3F27A /* CoreGraphics.framework */; };
@@ -27,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8381955C17077B0700785C36 /* SharesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharesViewController.h; sourceTree = "<group>"; };
+		8381955D17077B0700785C36 /* SharesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharesViewController.m; sourceTree = "<group>"; };
+		8381955E17077B0700785C36 /* SharesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharesViewController.xib; sourceTree = "<group>"; };
 		D32D69AF1707668200B3F27A /* AirDropbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDropbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32D69B21707668200B3F27A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D32D69B41707668200B3F27A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +117,9 @@
 				D32D6A2017076EF600B3F27A /* ShareSelectViewController.xib */,
 				D32D6A2117076EF600B3F27A /* DetailViewController.xib */,
 				D32D69B91707668200B3F27A /* Supporting Files */,
+				8381955C17077B0700785C36 /* SharesViewController.h */,
+				8381955D17077B0700785C36 /* SharesViewController.m */,
+				8381955E17077B0700785C36 /* SharesViewController.xib */,
 			);
 			path = AirDropbox;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 				D32D69E617076DCD00B3F27A /* README.md in Resources */,
 				D32D6A2417076EF600B3F27A /* ShareSelectViewController.xib in Resources */,
 				D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */,
+				8381956017077B0700785C36 /* SharesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +211,7 @@
 				D32D69C31707668300B3F27A /* AppDelegate.m in Sources */,
 				D32D6A2217076EF600B3F27A /* ShareSelectViewController.m in Sources */,
 				D32D6A2317076EF600B3F27A /* DetailViewController.m in Sources */,
+				8381955F17077B0700785C36 /* SharesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
