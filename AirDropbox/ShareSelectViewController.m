@@ -66,10 +66,10 @@
     //root
     if (metadata.isDirectory) {
         _objects = [metadata.contents mutableCopy];
-        for (DBMetadata *file in metadata.contents) {
-            NSLog(@"\t%@", file.filename);
+//        for (DBMetadata *file in metadata.contents) {
+//            NSLog(@"\t%@", file.filename);
 //            [_objects addObject:file];
-        }
+//        }
 //        NSLog(@"Folder '%@' contains:", metadata.path);
 //        for (DBMetadata *file in metadata.contents) {
 //            NSLog(@"\t%@", file.filename);
