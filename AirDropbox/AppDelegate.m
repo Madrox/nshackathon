@@ -25,7 +25,6 @@
     // Override point for customization after application launch.
     
     StartViewController* startViewController = [[StartViewController alloc] initWithNibName:@"StartViewController" bundle:nil];
-//    ShareSelectViewController *masterViewController = [[ShareSelectViewController alloc] initWithNibName:@"ShareSelectViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:startViewController];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];

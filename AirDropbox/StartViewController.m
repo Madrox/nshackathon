@@ -73,7 +73,10 @@
 -(void) identifyAPIWithLatit:(float)latitude longit:(float)longitude
 {
     API* api = [API sharedAPI];
-    [api identify:[[UIDevice currentDevice] name] andLatitude:latitude andLongitude:longitude andPicURL:nil];
+    
+    NSString* name = [[UIDevice currentDevice] name];
+    name = [name stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [api identify:name andLatitude:latitude andLongitude:longitude andPicURL:nil];
     [api refresh];
     [locationManager stopUpdatingLocation];
 }
