@@ -10,11 +10,12 @@
 #import <DropboxSDK/DropboxSDK.h>
 
 @class DetailViewController;
-
+@class API;
 @interface ShareSelectViewController : UITableViewController <DBRestClientDelegate>
 {
     DBRestClient* restClient;
     DBMetadata* metadata;
+    API* apiWrapper;
 }
 
 @property (strong, nonatomic) DetailViewController *detailViewController;

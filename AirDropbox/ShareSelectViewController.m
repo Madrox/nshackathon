@@ -31,6 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    apiWrapper = [[API alloc] init];
+    [apiWrapper identify];
+    [apiWrapper refresh];
+//    [apiWrapper ]
+    
 	// Do any additional setup after loading the view, typically from a nib.
     
 //        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystem target:self action:@selector(insertNewObject:)];
@@ -82,6 +87,18 @@
 loadMetadataFailedWithError:(NSError *)error {
     
     NSLog(@"Error loading metadata: %@", error);
+}
+
+- (void)restClient:(DBRestClient*)restClient loadedSharableLink:(NSString*)link
+           forFile:(NSString*)path;
+{
+    //sanitize the path string (remove the initial "/")
+    path = [path stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    [apiWrapper share:path toLink:link];
+}
+- (void)restClient:(DBRestClient*)restClient loadSharableLinkFailedWithError:(NSError*)error;
+{
+    NSLog(@"Error loading shareable link: %@", error);
 }
 
 
@@ -173,14 +190,19 @@ loadMetadataFailedWithError:(NSError *)error {
 //        cell.accessoryType = UITableViewCellAccessoryCheckmark;
 //    }
     
-    
     if (!self.detailViewController) {
         self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     }
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    DBMetadata *fileMetadata = _objects[indexPath.row];
+    [restClient loadSharableLinkForFile:fileMetadata.path];
+    
+    
+    
+//    self.detailViewController.detailItem = object;
+//    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
+
+
 
 @end
  
