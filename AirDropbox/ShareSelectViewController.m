@@ -9,7 +9,7 @@
 #import "ShareSelectViewController.h"
 
 #import "DetailViewController.h"
-
+#import "API.h"
 #import <DropboxSDK/DropboxSDK.h>
 
 @interface ShareSelectViewController () {
@@ -120,13 +120,16 @@ loadMetadataFailedWithError:(NSError *)error {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
 
     DBMetadata *cellMetadata = _objects[indexPath.row];
     cell.textLabel.text =  cellMetadata.filename;
+    
+    if(cellMetadata.isDirectory)
+        cell.detailTextLabel.text = @"Folder";
     return cell;
 }
 
