@@ -12,8 +12,8 @@
 
 
 - (NSString *)identify {
-    self.guid = @"guid";
-    [self refresh];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://secret-tor-9906.herokuapp.com/identify"];
+    self.guid = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     return self.guid;
 }
 
@@ -40,7 +40,7 @@
     
     NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     
-    NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:req delegate:self];
+    NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:req delegate:nil];
     
     return conn;
 }
