@@ -31,6 +31,15 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    //Activate dropbox auth (pops new screen or pulls from dropbox app)
+    if (![[DBSession sharedSession] isLinked]) {
+        [[DBSession sharedSession] linkFromController:self.view.window.rootViewController];
+    }
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
