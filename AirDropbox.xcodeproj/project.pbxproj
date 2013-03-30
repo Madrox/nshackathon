@@ -27,6 +27,7 @@
 		D32D6A2317076EF600B3F27A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A1F17076EF600B3F27A /* DetailViewController.m */; };
 		D32D6A2417076EF600B3F27A /* ShareSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2017076EF600B3F27A /* ShareSelectViewController.xib */; };
 		D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2117076EF600B3F27A /* DetailViewController.xib */; };
+		D32D6A2F1707885500B3F27A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A2E1707885500B3F27A /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		D32D6A1F17076EF600B3F27A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D32D6A2017076EF600B3F27A /* ShareSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareSelectViewController.xib; sourceTree = "<group>"; };
 		D32D6A2117076EF600B3F27A /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		D32D6A2D1707885500B3F27A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		D32D6A2E1707885500B3F27A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 				8381955E17077B0700785C36 /* SharesViewController.xib */,
 				8381956117077CC800785C36 /* API.h */,
 				8381956217077CC900785C36 /* API.m */,
+				D32D6A2C1707885500B3F27A /* SVProgressHUD */,
 			);
 			path = AirDropbox;
 			sourceTree = "<group>";
@@ -141,6 +145,15 @@
 				D32D69C81707668300B3F27A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D32D6A2C1707885500B3F27A /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D32D6A2D1707885500B3F27A /* SVProgressHUD.h */,
+				D32D6A2E1707885500B3F27A /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +231,7 @@
 				D32D6A2317076EF600B3F27A /* DetailViewController.m in Sources */,
 				8381955F17077B0700785C36 /* SharesViewController.m in Sources */,
 				8381956317077CC900785C36 /* API.m in Sources */,
+				D32D6A2F1707885500B3F27A /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
