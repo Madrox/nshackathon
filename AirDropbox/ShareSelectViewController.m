@@ -36,7 +36,6 @@
     apiWrapper = [[API alloc] init];
     [apiWrapper identify];
     [apiWrapper refresh];
-//    [apiWrapper ]
     
 	// Do any additional setup after loading the view, typically from a nib.
     

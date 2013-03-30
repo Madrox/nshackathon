@@ -29,6 +29,8 @@
 		D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2117076EF600B3F27A /* DetailViewController.xib */; };
 		D32D6A2F1707885500B3F27A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A2E1707885500B3F27A /* SVProgressHUD.m */; };
 		D32D6A31170789CD00B3F27A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A30170789CD00B3F27A /* SVProgressHUD.bundle */; };
+		D32D6A3517078BCF00B3F27A /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A3317078BCE00B3F27A /* StartViewController.m */; };
+		D32D6A3617078BCF00B3F27A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A3417078BCE00B3F27A /* StartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,9 @@
 		D32D6A2D1707885500B3F27A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		D32D6A2E1707885500B3F27A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		D32D6A30170789CD00B3F27A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		D32D6A3217078BCD00B3F27A /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		D32D6A3317078BCE00B3F27A /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		D32D6A3417078BCE00B3F27A /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,9 @@
 			children = (
 				D32D69C11707668300B3F27A /* AppDelegate.h */,
 				D32D69C21707668300B3F27A /* AppDelegate.m */,
+				D32D6A3217078BCD00B3F27A /* StartViewController.h */,
+				D32D6A3317078BCE00B3F27A /* StartViewController.m */,
+				D32D6A3417078BCE00B3F27A /* StartViewController.xib */,
 				D32D6A1C17076EF600B3F27A /* ShareSelectViewController.h */,
 				D32D6A1D17076EF600B3F27A /* ShareSelectViewController.m */,
 				D32D6A1E17076EF600B3F27A /* DetailViewController.h */,
@@ -219,6 +227,7 @@
 				D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */,
 				8381956017077B0700785C36 /* SharesViewController.xib in Resources */,
 				D32D6A31170789CD00B3F27A /* SVProgressHUD.bundle in Resources */,
+				D32D6A3617078BCF00B3F27A /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +245,7 @@
 				8381955F17077B0700785C36 /* SharesViewController.m in Sources */,
 				8381956317077CC900785C36 /* API.m in Sources */,
 				D32D6A2F1707885500B3F27A /* SVProgressHUD.m in Sources */,
+				D32D6A3517078BCF00B3F27A /* StartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

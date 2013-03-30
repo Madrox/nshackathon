@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ShareSelectViewController.h"
+#import "StartViewController.h"
 #import <DropboxSDK/DropboxSDK.h>
 
 @implementation AppDelegate
@@ -24,8 +24,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    ShareSelectViewController *masterViewController = [[ShareSelectViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    StartViewController* startViewController = [[StartViewController alloc] initWithNibName:@"StartViewController" bundle:nil];
+//    ShareSelectViewController *masterViewController = [[ShareSelectViewController alloc] initWithNibName:@"ShareSelectViewController" bundle:nil];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:startViewController];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
