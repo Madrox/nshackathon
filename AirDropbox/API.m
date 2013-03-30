@@ -80,6 +80,7 @@ static API *shared = NULL;
     if (jsonParsingError) {
         NSLog(@"%@",[NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@",self->guid]);
         NSLog(@"JSON ERROR: %@", [jsonParsingError localizedDescription]);
+
     } else {
         self->stats = object;
     }

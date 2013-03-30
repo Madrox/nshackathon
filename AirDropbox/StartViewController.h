@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <DropboxSDK/DropboxSDK.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface StartViewController : UIViewController <DBSessionDelegate>
+@interface StartViewController : UIViewController <DBSessionDelegate, CLLocationManagerDelegate>
+{
+    CLLocationManager *locationManager;
+}
 
 
 - (IBAction)share:(id)sender;

@@ -12,12 +12,8 @@
 
 @class DetailViewController;
 @class API;
-@interface ShareSelectViewController : UITableViewController <DBRestClientDelegate, CLLocationManagerDelegate>
-{
-    CLLocationManager *locationManager;
-    NSMutableArray *locationMeasurements;
-    CLLocation *bestEffortAtLocation;
-    
+@interface ShareSelectViewController : UITableViewController <DBRestClientDelegate>
+{    
     DBRestClient* restClient;
     DBMetadata* metadata;
     API* api;
