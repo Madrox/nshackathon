@@ -10,6 +10,8 @@
 
 #import "DetailViewController.h"
 
+#import <DropboxSDK/DropboxSDK.h>
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
 }
@@ -17,11 +19,15 @@
 
 @implementation MasterViewController
 
-- (void)awakeFromNib
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    [super awakeFromNib];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"Master", @"Master");
+    }
+    return self;
 }
-
+							
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,6 +38,14 @@
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    //Activate dropbox auth (pops new screen or pulls from dropbox app)
+    if (![[DBSession sharedSession] isLinked]) {
+        [[DBSession sharedSession] linkFromController:self.view.window.rootViewController];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -40,6 +54,10 @@
 
 - (void)insertNewObject:(id)sender
 {
+    //Activate dropbox auth (pops new screen or pulls from dropbox app)
+    if (![[DBSession sharedSession] isLinked]) {
+        [[DBSession sharedSession] linkFromController:self.view.window.rootViewController];
+    }
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
@@ -60,9 +78,17 @@
     return _objects.count;
 }
 
+// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+
 
     NSDate *object = _objects[indexPath.row];
     cell.textLabel.text = [object description];
@@ -101,13 +127,14 @@
 }
 */
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+    if (!self.detailViewController) {
+        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     }
+    NSDate *object = _objects[indexPath.row];
+    self.detailViewController.detailItem = object;
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 @end

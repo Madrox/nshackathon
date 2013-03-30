@@ -16,12 +16,14 @@
 		D32D69C51707668300B3F27A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D32D69C41707668300B3F27A /* Default.png */; };
 		D32D69C71707668300B3F27A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D32D69C61707668300B3F27A /* Default@2x.png */; };
 		D32D69C91707668300B3F27A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D32D69C81707668300B3F27A /* Default-568h@2x.png */; };
-		D32D69CC1707668300B3F27A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32D69CA1707668300B3F27A /* MainStoryboard.storyboard */; };
-		D32D69CF1707668300B3F27A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D69CE1707668300B3F27A /* MasterViewController.m */; };
-		D32D69D21707668300B3F27A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D69D11707668300B3F27A /* DetailViewController.m */; };
 		D32D69E017076CE200B3F27A /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69DF17076CE200B3F27A /* DropboxSDK.framework */; };
 		D32D69E217076CEC00B3F27A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69E117076CEC00B3F27A /* QuartzCore.framework */; };
 		D32D69E417076CF000B3F27A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69E317076CF000B3F27A /* Security.framework */; };
+		D32D69E617076DCD00B3F27A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D32D69E517076DCD00B3F27A /* README.md */; };
+		D32D6A2217076EF600B3F27A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A1D17076EF600B3F27A /* MasterViewController.m */; };
+		D32D6A2317076EF600B3F27A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A1F17076EF600B3F27A /* DetailViewController.m */; };
+		D32D6A2417076EF600B3F27A /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2017076EF600B3F27A /* MasterViewController.xib */; };
+		D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2117076EF600B3F27A /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,14 +40,16 @@
 		D32D69C41707668300B3F27A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D32D69C61707668300B3F27A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D32D69C81707668300B3F27A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D32D69CB1707668300B3F27A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		D32D69CD1707668300B3F27A /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		D32D69CE1707668300B3F27A /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		D32D69D01707668300B3F27A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		D32D69D11707668300B3F27A /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D32D69DF17076CE200B3F27A /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		D32D69E117076CEC00B3F27A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D32D69E317076CF000B3F27A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D32D69E517076DCD00B3F27A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D32D6A1C17076EF600B3F27A /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		D32D6A1D17076EF600B3F27A /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		D32D6A1E17076EF600B3F27A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D32D6A1F17076EF600B3F27A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D32D6A2017076EF600B3F27A /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		D32D6A2117076EF600B3F27A /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		D32D69A61707668200B3F27A = {
 			isa = PBXGroup;
 			children = (
+				D32D69E517076DCD00B3F27A /* README.md */,
 				D32D69B81707668200B3F27A /* AirDropbox */,
 				D32D69B11707668200B3F27A /* Frameworks */,
 				D32D69B01707668200B3F27A /* Products */,
@@ -100,11 +105,12 @@
 			children = (
 				D32D69C11707668300B3F27A /* AppDelegate.h */,
 				D32D69C21707668300B3F27A /* AppDelegate.m */,
-				D32D69CA1707668300B3F27A /* MainStoryboard.storyboard */,
-				D32D69CD1707668300B3F27A /* MasterViewController.h */,
-				D32D69CE1707668300B3F27A /* MasterViewController.m */,
-				D32D69D01707668300B3F27A /* DetailViewController.h */,
-				D32D69D11707668300B3F27A /* DetailViewController.m */,
+				D32D6A1C17076EF600B3F27A /* MasterViewController.h */,
+				D32D6A1D17076EF600B3F27A /* MasterViewController.m */,
+				D32D6A1E17076EF600B3F27A /* DetailViewController.h */,
+				D32D6A1F17076EF600B3F27A /* DetailViewController.m */,
+				D32D6A2017076EF600B3F27A /* MasterViewController.xib */,
+				D32D6A2117076EF600B3F27A /* DetailViewController.xib */,
 				D32D69B91707668200B3F27A /* Supporting Files */,
 			);
 			path = AirDropbox;
@@ -179,7 +185,9 @@
 				D32D69C51707668300B3F27A /* Default.png in Resources */,
 				D32D69C71707668300B3F27A /* Default@2x.png in Resources */,
 				D32D69C91707668300B3F27A /* Default-568h@2x.png in Resources */,
-				D32D69CC1707668300B3F27A /* MainStoryboard.storyboard in Resources */,
+				D32D69E617076DCD00B3F27A /* README.md in Resources */,
+				D32D6A2417076EF600B3F27A /* MasterViewController.xib in Resources */,
+				D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,8 +200,8 @@
 			files = (
 				D32D69BF1707668300B3F27A /* main.m in Sources */,
 				D32D69C31707668300B3F27A /* AppDelegate.m in Sources */,
-				D32D69CF1707668300B3F27A /* MasterViewController.m in Sources */,
-				D32D69D21707668300B3F27A /* DetailViewController.m in Sources */,
+				D32D6A2217076EF600B3F27A /* MasterViewController.m in Sources */,
+				D32D6A2317076EF600B3F27A /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,14 +214,6 @@
 				D32D69BC1707668300B3F27A /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D32D69CA1707668300B3F27A /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D32D69CB1707668300B3F27A /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
