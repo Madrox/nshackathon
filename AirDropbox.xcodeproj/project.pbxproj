@@ -19,6 +19,9 @@
 		D32D69CC1707668300B3F27A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32D69CA1707668300B3F27A /* MainStoryboard.storyboard */; };
 		D32D69CF1707668300B3F27A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D69CE1707668300B3F27A /* MasterViewController.m */; };
 		D32D69D21707668300B3F27A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D69D11707668300B3F27A /* DetailViewController.m */; };
+		D32D69E017076CE200B3F27A /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69DF17076CE200B3F27A /* DropboxSDK.framework */; };
+		D32D69E217076CEC00B3F27A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69E117076CEC00B3F27A /* QuartzCore.framework */; };
+		D32D69E417076CF000B3F27A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69E317076CF000B3F27A /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		D32D69CE1707668300B3F27A /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		D32D69D01707668300B3F27A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D32D69D11707668300B3F27A /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D32D69DF17076CE200B3F27A /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		D32D69E117076CEC00B3F27A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D32D69E317076CF000B3F27A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +53,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32D69E417076CF000B3F27A /* Security.framework in Frameworks */,
+				D32D69E217076CEC00B3F27A /* QuartzCore.framework in Frameworks */,
 				D32D69B31707668200B3F27A /* UIKit.framework in Frameworks */,
 				D32D69B51707668200B3F27A /* Foundation.framework in Frameworks */,
 				D32D69B71707668200B3F27A /* CoreGraphics.framework in Frameworks */,
+				D32D69E017076CE200B3F27A /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +85,9 @@
 		D32D69B11707668200B3F27A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D32D69E317076CF000B3F27A /* Security.framework */,
+				D32D69E117076CEC00B3F27A /* QuartzCore.framework */,
+				D32D69DF17076CE200B3F27A /* DropboxSDK.framework */,
 				D32D69B21707668200B3F27A /* UIKit.framework */,
 				D32D69B41707668200B3F27A /* Foundation.framework */,
 				D32D69B61707668200B3F27A /* CoreGraphics.framework */,
@@ -266,6 +278,10 @@
 		D32D69D61707668300B3F27A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirDropbox/AirDropbox-Prefix.pch";
 				INFOPLIST_FILE = "AirDropbox/AirDropbox-Info.plist";
@@ -277,6 +293,10 @@
 		D32D69D71707668300B3F27A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirDropbox/AirDropbox-Prefix.pch";
 				INFOPLIST_FILE = "AirDropbox/AirDropbox-Info.plist";
@@ -304,6 +324,7 @@
 				D32D69D71707668300B3F27A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
