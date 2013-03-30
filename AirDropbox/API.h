@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface API : NSObject
+{
+    NSString *guid;
+    NSMutableData *apiData;
+    NSDictionary *stats;
+}
 
-@property (strong,nonatomic) NSString *guid;
-@property (strong,nonatomic) NSMutableData *data;
-@property (strong,nonatomic) NSDictionary *stats;
+
++ (API *)sharedAPI;
 
 - (NSArray *)shares;
-- (NSString *)identify;
+- (NSString *)identify: (NSString *)username andLatitude:(float)lat andLongitude:(float) lon andPicURL:(NSString *)pic;
 - (NSDictionary *)status;
 - (NSURLConnection *)share: (NSString *)name toLink:(NSString *)dropbox_link;
 - (NSURLConnection *)refresh;
@@ -26,3 +30,6 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 
 @end
+
+
+
