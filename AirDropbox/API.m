@@ -12,6 +12,10 @@ static API *shared = NULL;
 
 @implementation API
 
+@synthesize guid;
+@synthesize stats;
+@synthesize apiData;
+
 + (API *)sharedAPI
 {
     @synchronized([API class])
@@ -27,18 +31,18 @@ static API *shared = NULL;
 
 - (NSString *)identify:(NSString *)username andLatitude:(float)lat andLongitude:(float)lon andPicURL:(NSString *)pic {
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/identify?lat=%f&lon=%f&username=%@&image=%@",lat,lon,username,pic]];
-    self->guid = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    self.guid = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     
-    self->stats = @{
+    self.stats = @{
                    @"shares_near_me": @[]
                    };
     
-    return self->guid;
+    return self.guid;
 }
 
 - (NSURLConnection *)refresh {
     
-    NSString *url = [NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@",self->guid];
+    NSString *url = [NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@",self.guid];
     NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
 
     NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:req delegate:self];
@@ -47,15 +51,15 @@ static API *shared = NULL;
 }
 
 - (NSArray *)shares {
-    return [self->stats objectForKey:@"shares_near_me"];
+    return [self.stats objectForKey:@"shares_near_me"];
 }
 
 - (NSDictionary *)status {
-    return self->stats;
+    return self.stats;
 }
 
 - (NSURLConnection *)share:(NSString *)name toLink:(NSString *)dropbox_link {
-    NSString *url = [NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@/share?name=%@&link=%@",self->guid,name,dropbox_link];
+    NSString *url = [NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@/share?name=%@&link=%@",self.guid,name,dropbox_link];
     
     NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     
@@ -66,22 +70,22 @@ static API *shared = NULL;
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    self->apiData = [[NSMutableData alloc] init];
+    self.apiData = [[NSMutableData alloc] init];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self->apiData appendData:data];
+    [self.apiData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSError *jsonParsingError = nil;
-    id object = [NSJSONSerialization JSONObjectWithData:self->apiData options:0 error:&jsonParsingError];
+    id object = [NSJSONSerialization JSONObjectWithData:self.apiData options:0 error:&jsonParsingError];
     
     if (jsonParsingError) {
-        NSLog(@"%@",[NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@",self->guid]);
+        NSLog(@"%@",[NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@",self.guid]);
         NSLog(@"JSON ERROR: %@", [jsonParsingError localizedDescription]);
     } else {
-        self->stats = object;
+        self.stats = object;
     }
 }
 

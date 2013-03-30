@@ -14,6 +14,9 @@
     NSMutableData *apiData;
     NSDictionary *stats;
 }
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, retain) NSMutableData *apiData;
+@property (nonatomic, retain) NSDictionary *stats;
 
 
 + (API *)sharedAPI;
