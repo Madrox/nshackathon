@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-//@class DBSessionDelegat
+#import <DropboxSDK/DropboxSDK.h>
 
-@interface StartViewController : UIViewController
+@interface StartViewController : UIViewController <DBSessionDelegate>
 
 
 - (IBAction)share:(id)sender;

@@ -8,14 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <DropboxSDK/DropboxSDK.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class DetailViewController;
 @class API;
-@interface ShareSelectViewController : UITableViewController <DBRestClientDelegate>
+@interface ShareSelectViewController : UITableViewController <DBRestClientDelegate, CLLocationManagerDelegate>
 {
+    CLLocationManager *locationManager;
+    NSMutableArray *locationMeasurements;
+    CLLocation *bestEffortAtLocation;
+    
     DBRestClient* restClient;
     DBMetadata* metadata;
-    API* apiWrapper;
+    API* api;
 }
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
