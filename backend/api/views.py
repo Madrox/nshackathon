@@ -4,6 +4,7 @@ from models import *
 from django.shortcuts import get_object_or_404
 from decimal import Decimal
 from django.http import HttpResponse
+from datetime import datetime,timedelta
 
 """
     url(r'^identify$', 'api.views.identify', name='identify'),
@@ -21,6 +22,7 @@ def identify(request):
 		longitude=request.REQUEST.get('lon',0.0),
 		username=request.REQUEST.get('username','Anonymous'),
 		image=request.REQUEST.get('image','http://example.com/unknown.jpg'),
+		last_ping = datetime.now()
 		)
 	spot.generate()
 	spot.save()
@@ -29,6 +31,8 @@ def identify(request):
 @api_view
 def status(request,owner_token):
 	spot = get_object_or_404(Spot,owner_token=owner_token)
+	spot.last_ping = datetime.now()
+	spot.save()
 	ppl = Spot.objects.filter(
 						latitude__gt=spot.latitude-Decimal(.5)
 						).filter(
@@ -37,6 +41,8 @@ def status(request,owner_token):
 						longitude__gt=spot.longitude-Decimal(.5)
 						).filter(
 						longitude__lt=spot.longitude+Decimal(.5)
+						).exclude(
+						last_ping__gt=datetime.now()-timedelta(minutes=30)
 						)
 	shares = Share.objects.filter(spot__in=ppl)
 	#ppl = ppl.exclude(id=spot.id)
@@ -51,6 +57,8 @@ def status(request,owner_token):
 @api_view
 def stop_sharing(request,owner_token):
 	spot = get_object_or_404(Spot,owner_token=owner_token)
+	spot.last_ping = datetime.now()
+	spot.save()
 	share = get_object_or_404(Share,spot=spot)
 	share.delete()
 	return { "stop_sharing": True }
@@ -58,6 +66,8 @@ def stop_sharing(request,owner_token):
 @api_view #(usage={'name': 'friendly share name', 'link': 'dropbox link'})
 def share(request,owner_token):
 	spot = get_object_or_404(Spot,owner_token=owner_token)
+	spot.last_ping = datetime.now()
+	spot.save()
 	share = Share.objects.create(	spot=spot,
 									name=request.REQUEST.get('name','share'),
 									link=request.REQUEST.get('link','http://foo.com'))

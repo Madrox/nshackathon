@@ -11,7 +11,7 @@ class Spot(models.Model):
 	longitude = models.DecimalField(max_digits=10,decimal_places=5)
 	image = models.URLField(max_length=600)
 	owner_token = models.CharField(max_length=100)
-	last_ping = models.DateTimeField(auto_now_add=True),
+	last_ping = models.DateTimeField(auto_now_add=True)
 	username = models.CharField(max_length=100)
 
 	def generate(self):
