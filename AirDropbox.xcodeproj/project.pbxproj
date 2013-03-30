@@ -20,9 +20,9 @@
 		D32D69E217076CEC00B3F27A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69E117076CEC00B3F27A /* QuartzCore.framework */; };
 		D32D69E417076CF000B3F27A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69E317076CF000B3F27A /* Security.framework */; };
 		D32D69E617076DCD00B3F27A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D32D69E517076DCD00B3F27A /* README.md */; };
-		D32D6A2217076EF600B3F27A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A1D17076EF600B3F27A /* MasterViewController.m */; };
+		D32D6A2217076EF600B3F27A /* ShareSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A1D17076EF600B3F27A /* ShareSelectViewController.m */; };
 		D32D6A2317076EF600B3F27A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32D6A1F17076EF600B3F27A /* DetailViewController.m */; };
-		D32D6A2417076EF600B3F27A /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2017076EF600B3F27A /* MasterViewController.xib */; };
+		D32D6A2417076EF600B3F27A /* ShareSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2017076EF600B3F27A /* ShareSelectViewController.xib */; };
 		D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D6A2117076EF600B3F27A /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -44,11 +44,11 @@
 		D32D69E117076CEC00B3F27A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D32D69E317076CF000B3F27A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D32D69E517076DCD00B3F27A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		D32D6A1C17076EF600B3F27A /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		D32D6A1D17076EF600B3F27A /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		D32D6A1C17076EF600B3F27A /* ShareSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSelectViewController.h; sourceTree = "<group>"; };
+		D32D6A1D17076EF600B3F27A /* ShareSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSelectViewController.m; sourceTree = "<group>"; };
 		D32D6A1E17076EF600B3F27A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D32D6A1F17076EF600B3F27A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		D32D6A2017076EF600B3F27A /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		D32D6A2017076EF600B3F27A /* ShareSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareSelectViewController.xib; sourceTree = "<group>"; };
 		D32D6A2117076EF600B3F27A /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,11 +105,11 @@
 			children = (
 				D32D69C11707668300B3F27A /* AppDelegate.h */,
 				D32D69C21707668300B3F27A /* AppDelegate.m */,
-				D32D6A1C17076EF600B3F27A /* MasterViewController.h */,
-				D32D6A1D17076EF600B3F27A /* MasterViewController.m */,
+				D32D6A1C17076EF600B3F27A /* ShareSelectViewController.h */,
+				D32D6A1D17076EF600B3F27A /* ShareSelectViewController.m */,
 				D32D6A1E17076EF600B3F27A /* DetailViewController.h */,
 				D32D6A1F17076EF600B3F27A /* DetailViewController.m */,
-				D32D6A2017076EF600B3F27A /* MasterViewController.xib */,
+				D32D6A2017076EF600B3F27A /* ShareSelectViewController.xib */,
 				D32D6A2117076EF600B3F27A /* DetailViewController.xib */,
 				D32D69B91707668200B3F27A /* Supporting Files */,
 			);
@@ -186,7 +186,7 @@
 				D32D69C71707668300B3F27A /* Default@2x.png in Resources */,
 				D32D69C91707668300B3F27A /* Default-568h@2x.png in Resources */,
 				D32D69E617076DCD00B3F27A /* README.md in Resources */,
-				D32D6A2417076EF600B3F27A /* MasterViewController.xib in Resources */,
+				D32D6A2417076EF600B3F27A /* ShareSelectViewController.xib in Resources */,
 				D32D6A2517076EF600B3F27A /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +200,7 @@
 			files = (
 				D32D69BF1707668300B3F27A /* main.m in Sources */,
 				D32D69C31707668300B3F27A /* AppDelegate.m in Sources */,
-				D32D6A2217076EF600B3F27A /* MasterViewController.m in Sources */,
+				D32D6A2217076EF600B3F27A /* ShareSelectViewController.m in Sources */,
 				D32D6A2317076EF600B3F27A /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

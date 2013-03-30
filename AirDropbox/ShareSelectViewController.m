@@ -6,24 +6,24 @@
 //  Copyright (c) 2013 nsmeetup. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "ShareSelectViewController.h"
 
 #import "DetailViewController.h"
 
 #import <DropboxSDK/DropboxSDK.h>
 
-@interface MasterViewController () {
+@interface ShareSelectViewController () {
     NSMutableArray *_objects;
 }
 @end
 
-@implementation MasterViewController
+@implementation ShareSelectViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
+        self.title = NSLocalizedString(@"Select Items to Share", @"Select Items to Share");
     }
     return self;
 }
@@ -44,7 +44,42 @@
     if (![[DBSession sharedSession] isLinked]) {
         [[DBSession sharedSession] linkFromController:self.view.window.rootViewController];
     }
+    
+    //set up rest client
+    if (!restClient) {
+            restClient =
+            [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+            restClient.delegate = self;
+    }
+
+    
+    //get metadata (list of all files and folders in root)
+    [restClient loadMetadata:@"/"];
 }
+
+//Dropbox callback
+- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metad {
+    metadata=metad;
+    
+//    //root
+//    if (metadata.isDirectory) {
+//        //        for (DBMetadata *file in metadata.contents) {
+//        //            NSLog(@"\t%@", file.filename);
+//        _objects addObject:<#(id)#>
+////        NSLog(@"Folder '%@' contains:", metadata.path);
+////        for (DBMetadata *file in metadata.contents) {
+////            NSLog(@"\t%@", file.filename);
+//        }
+//    }
+}
+
+//Dropbox callback
+- (void)restClient:(DBRestClient *)client
+loadMetadataFailedWithError:(NSError *)error {
+    
+    NSLog(@"Error loading metadata: %@", error);
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -54,10 +89,6 @@
 
 - (void)insertNewObject:(id)sender
 {
-    //Activate dropbox auth (pops new screen or pulls from dropbox app)
-    if (![[DBSession sharedSession] isLinked]) {
-        [[DBSession sharedSession] linkFromController:self.view.window.rootViewController];
-    }
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
@@ -129,6 +160,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
+    
+    
     if (!self.detailViewController) {
         self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     }
@@ -138,3 +176,4 @@
 }
 
 @end
+ 
