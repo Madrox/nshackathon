@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "API.h"
 
 @interface SharesViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITableViewCell *menuItemCell;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong,nonatomic) API *api;
 
 @end
