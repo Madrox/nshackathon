@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8381955F17077B0700785C36 /* SharesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381955D17077B0700785C36 /* SharesViewController.m */; };
 		8381956017077B0700785C36 /* SharesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8381955E17077B0700785C36 /* SharesViewController.xib */; };
+		8381956317077CC900785C36 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381956217077CC900785C36 /* API.m */; };
 		D32D69B31707668200B3F27A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69B21707668200B3F27A /* UIKit.framework */; };
 		D32D69B51707668200B3F27A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69B41707668200B3F27A /* Foundation.framework */; };
 		D32D69B71707668200B3F27A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D69B61707668200B3F27A /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 		8381955C17077B0700785C36 /* SharesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharesViewController.h; sourceTree = "<group>"; };
 		8381955D17077B0700785C36 /* SharesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharesViewController.m; sourceTree = "<group>"; };
 		8381955E17077B0700785C36 /* SharesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharesViewController.xib; sourceTree = "<group>"; };
+		8381956117077CC800785C36 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		8381956217077CC900785C36 /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		D32D69AF1707668200B3F27A /* AirDropbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDropbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32D69B21707668200B3F27A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D32D69B41707668200B3F27A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 				8381955C17077B0700785C36 /* SharesViewController.h */,
 				8381955D17077B0700785C36 /* SharesViewController.m */,
 				8381955E17077B0700785C36 /* SharesViewController.xib */,
+				8381956117077CC800785C36 /* API.h */,
+				8381956217077CC900785C36 /* API.m */,
 			);
 			path = AirDropbox;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				D32D6A2217076EF600B3F27A /* ShareSelectViewController.m in Sources */,
 				D32D6A2317076EF600B3F27A /* DetailViewController.m in Sources */,
 				8381955F17077B0700785C36 /* SharesViewController.m in Sources */,
+				8381956317077CC900785C36 /* API.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
