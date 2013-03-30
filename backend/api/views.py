@@ -3,6 +3,7 @@ from helpers import api_view
 from models import *
 from django.shortcuts import get_object_or_404
 from decimal import Decimal
+from django.http import HttpResponse
 
 """
     url(r'^identify$', 'api.views.identify', name='identify'),
@@ -14,7 +15,6 @@ from decimal import Decimal
     """
 
 
-@api_view #(usage={'lat': 'latitude','lon': 'longitude','image': 'full url to avatar image','username': 'friendly name'})
 def identify(request):
 	spot = Spot.objects.create(
 		latitude=request.REQUEST.get('lat',0.0),
@@ -24,7 +24,7 @@ def identify(request):
 		)
 	spot.generate()
 	spot.save()
-	return { "token": spot.owner_token }
+	return HttpResponse(spot.owner_token)
 
 @api_view
 def status(request,owner_token):
