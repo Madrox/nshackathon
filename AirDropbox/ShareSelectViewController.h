@@ -11,7 +11,7 @@
 
 @class DetailViewController;
 
-@interface ShareSelectViewController : UITableViewController
+@interface ShareSelectViewController : UITableViewController <DBRestClientDelegate>
 {
     DBRestClient* restClient;
     DBMetadata* metadata;

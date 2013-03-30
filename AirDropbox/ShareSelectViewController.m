@@ -61,16 +61,18 @@
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metad {
     metadata=metad;
     
-//    //root
-//    if (metadata.isDirectory) {
-//        //        for (DBMetadata *file in metadata.contents) {
-//        //            NSLog(@"\t%@", file.filename);
-//        _objects addObject:<#(id)#>
-////        NSLog(@"Folder '%@' contains:", metadata.path);
-////        for (DBMetadata *file in metadata.contents) {
-////            NSLog(@"\t%@", file.filename);
-//        }
-//    }
+    //root
+    if (metadata.isDirectory) {
+        _objects = [metadata.contents mutableCopy];
+        for (DBMetadata *file in metadata.contents) {
+            NSLog(@"\t%@", file.filename);
+//            [_objects addObject:file];
+        }
+//        NSLog(@"Folder '%@' contains:", metadata.path);
+//        for (DBMetadata *file in metadata.contents) {
+//            NSLog(@"\t%@", file.filename);
+    }
+    [self.tableView reloadData];
 }
 
 //Dropbox callback
@@ -121,8 +123,8 @@ loadMetadataFailedWithError:(NSError *)error {
     }
 
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    DBMetadata *cellMetadata = _objects[indexPath.row];
+    cell.textLabel.text =  cellMetadata.filename;
     return cell;
 }
 
