@@ -10,8 +10,6 @@
 #import <UIKit/UIKit.h>
 #import <AvailabilityMacros.h>
 
-extern NSString * const SVProgressHUDDidReceiveTouchEventNotification;
-
 enum {
     SVProgressHUDMaskTypeNone = 1, // allow user interactions while HUD is displayed
     SVProgressHUDMaskTypeClear, // don't allow
@@ -46,7 +44,6 @@ typedef NSUInteger SVProgressHUDMaskType;
 + (void)showErrorWithStatus:(NSString *)string;
 + (void)showImage:(UIImage*)image status:(NSString*)status; // use 28x28 white pngs
 
-+ (void)popActivity;
 + (void)dismiss;
 
 + (BOOL)isVisible;
