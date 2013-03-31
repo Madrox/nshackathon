@@ -84,14 +84,17 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+//    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     [self.apiData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSError *jsonParsingError = nil;
-    id object = [NSJSONSerialization JSONObjectWithData:self.apiData options:0 error:&jsonParsingError];
+    id object = [NSJSONSerialization JSONObjectWithData:self.apiData options:NSJSONReadingAllowFragments error:&jsonParsingError];
     
     if (jsonParsingError) {
+        //str is for debugging
+        NSString *str = [[NSString alloc] initWithData:self.apiData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",[NSString stringWithFormat:@"http://secret-tor-9906.herokuapp.com/%@",self.guid]);
         NSLog(@"JSON ERROR: %@", [jsonParsingError localizedDescription]);
 
