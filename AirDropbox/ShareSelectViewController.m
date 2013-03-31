@@ -103,6 +103,10 @@
     DBMetadata *cellMetadata = _objects[indexPath.row];
     cell.textLabel.text =  cellMetadata.filename;
     
+    NSString* fileIcon = cellMetadata.icon;
+    fileIcon = [fileIcon stringByAppendingString:@".gif"];
+    cell.imageView.image = [UIImage imageNamed:fileIcon];
+    
     if(cellMetadata.isDirectory)
         cell.detailTextLabel.text = @"Folder";
     return cell;
