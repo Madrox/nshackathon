@@ -21,15 +21,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+    
     }
     return self;
 }
 
+//after view creation
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -37,7 +37,12 @@
     // attempt to acquire location and thus, the amount of power that will be consumed.
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.distanceFilter = kCLDistanceFilterNone;
-    
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -53,10 +58,15 @@
     }
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)share:(id)sender { 
