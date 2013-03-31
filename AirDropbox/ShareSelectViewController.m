@@ -46,7 +46,9 @@
 }
 
 -(void) viewDidAppear:(BOOL)animated
-{    
+{
+    [super viewDidAppear:animated];
+    
     //set up rest client
     if (!restClient) {
             restClient =
@@ -54,48 +56,8 @@
             restClient.delegate = self;
     }
 
-    
     //get metadata (list of all files and folders in root)
     [restClient loadMetadata:@"/"];
-}
-
-//Dropbox callback
-- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metad {
-    metadata=metad;
-    
-    //root
-    if (metadata.isDirectory) {
-        _objects = [metadata.contents mutableCopy];
-//        for (DBMetadata *file in metadata.contents) {
-//            NSLog(@"\t%@", file.filename);
-//            [_objects addObject:file];
-//        }
-//        NSLog(@"Folder '%@' contains:", metadata.path);
-//        for (DBMetadata *file in metadata.contents) {
-//            NSLog(@"\t%@", file.filename);
-    }
-    [self.tableView reloadData];
-}
-
-//Dropbox callback
-- (void)restClient:(DBRestClient *)client
-loadMetadataFailedWithError:(NSError *)error {
-    
-    NSLog(@"Error loading metadata: %@", error);
-}
-
-- (void)restClient:(DBRestClient*)restClient loadedSharableLink:(NSString*)link
-           forFile:(NSString*)path;
-{
-    //sanitize the path string (remove the initial "/")
-    path = [path stringByReplacingOccurrencesOfString:@"/" withString:@""];
-    [api share:path toLink:link];
-    
-    [SVProgressHUD showSuccessWithStatus:@"Successful share!"];
-}
-- (void)restClient:(DBRestClient*)restClient loadSharableLinkFailedWithError:(NSError*)error;
-{
-    [SVProgressHUD showErrorWithStatus:@"Error sharing file"];
 }
 
 
@@ -148,7 +110,7 @@ loadMetadataFailedWithError:(NSError *)error {
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
+    //is item editable?
     return NO;
 }
 
@@ -190,8 +152,6 @@ loadMetadataFailedWithError:(NSError *)error {
 //        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
 //    }
     
-
-    
     DBMetadata *fileMetadata = _objects[indexPath.row];
     [restClient loadSharableLinkForFile:fileMetadata.path];
     
@@ -199,6 +159,37 @@ loadMetadataFailedWithError:(NSError *)error {
     
 //    self.detailViewController.detailItem = object;
 //    [self.navigationController pushViewController:self.detailViewController animated:YES];
+}
+
+#pragma mark DBRestClientDelegate
+- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metad {
+    metadata=metad;
+    
+    //root directory
+    if (metadata.isDirectory) {
+        _objects = [metadata.contents mutableCopy];
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (void)restClient:(DBRestClient *)client
+loadMetadataFailedWithError:(NSError *)error {
+    [SVProgressHUD showErrorWithStatus:@"Error accessing files - Try again"];
+}
+
+- (void)restClient:(DBRestClient*)restClient loadedSharableLink:(NSString*)link
+           forFile:(NSString*)path;
+{
+    //sanitize the path string (remove the initial "/")
+    path = [path stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    [api share:path toLink:link];
+    
+    [SVProgressHUD showSuccessWithStatus:@"Successful share!"];
+}
+- (void)restClient:(DBRestClient*)restClient loadSharableLinkFailedWithError:(NSError*)error;
+{
+    [SVProgressHUD showErrorWithStatus:@"Error sharing file"];
 }
 
 
