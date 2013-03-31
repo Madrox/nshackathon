@@ -1,9 +1,7 @@
-nshackathon
+AirDropbox
 ===========
+David Horn and Brian Chu
 
-NSHackathon Project
-
-AirDropbox.
-
+NSMeetup Hackaton Project
 
 Dropbox app name: AllDrop

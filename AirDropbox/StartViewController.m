@@ -85,17 +85,18 @@
     API* api = [API sharedAPI];
     
     NSString* name = [[UIDevice currentDevice] name];
-//    name = [name stringByReplacingOccurrencesOfString:@" " withString:@""];
     [api identify:name andLatitude:latitude andLongitude:longitude andPicURL:nil];
     [api refresh];
     [locationManager stopUpdatingLocation];
 }
 
-/*
- * We want to get and store a location measurement that meets the desired accuracy. For this example, we are
- *      going to use horizontal accuracy as the deciding factor. In other cases, you may wish to use vertical
- *      accuracy, or both together.
- */
+#pragma mark DBSessionDelegate
+-(void)sessionDidReceiveAuthorizationFailure:(DBSession *)session userId:(NSString *)userId
+{
+    
+}
+
+#pragma mark CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     // store all of the measurements, just so we can see what kind of data we might receive
     
@@ -109,28 +110,5 @@
     NSLog(@"%f, %f",newLocation.coordinate.latitude, newLocation.coordinate.longitude);
     
     [self identifyAPIWithLatit:newLocation.coordinate.latitude longit:newLocation.coordinate.longitude];
-    
-    // test the measurement to see if it is more accurate than the previous measurement
-    //    if (bestEffortAtLocation == nil || bestEffortAtLocation.horizontalAccuracy > newLocation.horizontalAccuracy) {
-    //        // store the location as the "best effort"
-    //        self.bestEffortAtLocation = newLocation;
-    //        // test the measurement to see if it meets the desired accuracy
-    //        //
-    //        // IMPORTANT!!! kCLLocationAccuracyBest should not be used for comparison with location coordinate or altitidue
-    //        // accuracy because it is a negative value. Instead, compare against some predetermined "real" measure of
-    //        // acceptable accuracy, or depend on the timeout to stop updating. This sample depends on the timeout.
-    //        //
-    //        if (newLocation.horizontalAccuracy <= locationManager.desiredAccuracy) {
-    //            // we have a measurement that meets our requirements, so we can stop updating the location
-    //            //
-    //            // IMPORTANT!!! Minimize power usage by stopping the location manager as soon as possible.
-    //            //
-    //            [self stopUpdatingLocation:NSLocalizedString(@"Acquired Location", @"Acquired Location")];
-    //            // we can also cancel our previous performSelector:withObject:afterDelay: - it's no longer necessary
-    //            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stopUpdatingLocation:) object:nil];
-    //        }
-    //    }
-    //    // update the display with the new location data
-    //    [self.tableView reloadData];
 }
 @end
